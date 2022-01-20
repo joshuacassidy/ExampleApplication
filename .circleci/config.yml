@@ -8,6 +8,9 @@ workflows:
 
 jobs:
   build:
+    branches:
+        only:
+          - main
     working_directory: ~/example_application
     docker:
       - image: circleci/node:10.16.3
@@ -25,3 +28,4 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      
