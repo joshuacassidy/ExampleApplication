@@ -9,10 +9,9 @@ workflows:
             branches:
               only:
                 - main
-        - build_application
 
 jobs:
-  build_application:
+  build:
     working_directory: ~/example_application
     docker:
       - image: circleci/node:10.16.3
